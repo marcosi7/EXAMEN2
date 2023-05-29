@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EXAMEN 2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <section class="vh-100 bg-light">
+            <div class="container-fluid h-100" style="padding: 5rem 5rem 3rem 5rem;">
+              <div class="row h-100">
+                <div class="col-md-6 text-center d-flex align-items-center justify-content-center">
+                  <div>
+                    <h1>2da. Feria de la<br>Alimentación Saludable</h1>
+                    <p>"Una alimentación saludable consiste en ingerir una variedad de alimentos que te brinden los nutrientes que necesitas para mantenerte sano. Generalmente, se puede decir que la alimentación saludable es aquella que proporciona los nutrientes que el cuerpo necesita para mantener el buen funcionamiento del organismo, conservar o restablecer la salud, minimizar el riesgo de enfermedades, garantizar la reproducción, gestación, lactancia, desarrollo y crecimiento adecuado."</p>
+                  </div>
+                </div>
+                <div class="col-md-6 text-center text-white d-flex align-items-center justify-content-center">
+                  <div>
+                    <img src="/assets/frutas2.png" alt="Avatar" class="image" style="width:60%">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+          
+        <section class="bg-dark py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-center text-white">
+                  <h1>Chatea con otros¡</h1>
+                  <p>Charla con quienes asistiran al evento.</p>
+                  <div class="chatContainer">
+                    <p [ngClass]="{'local': message.messageType === 1, 'remoto': message.messageType === 2}" *ngFor="let message of chats"> {{message.text}} </p>
+                </div>
+                
+                <div class="inputContainer">
+                    <form (submit)="enviarMensaje()">
+                        <input class="form-control form-control-lg" type="text" placeholder="Escribe aquí." [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+                    </form>
+                </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <footer class="bg-dark text-white mt-auto">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Encuentranos en las redes sociales.</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                          <i class="bi bi-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://www.twitter.com/">
+                          <i class="bi bi-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                          <i class="bi bi-instagram"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+        </footer>
+    </body>
+</html>

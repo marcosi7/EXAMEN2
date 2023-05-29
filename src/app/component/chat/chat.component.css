@@ -1,0 +1,52 @@
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+html, body {
+    background: linear-gradient(120deg, #848484, #6265c7);
+    overflow: hidden;
+    
+  }
+
+h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+p {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+  
+.chatContainer{
+    padding: 30px;
+    width: 100%;
+    height: max-content;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+.local{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: darkcyan;
+    max-width: 80%;
+    color: white;
+    font-size: 17px;
+    align-self: flex-start;
+}
+
+.remoto{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: darkkhaki;
+    max-width: 80%;
+    color: white;
+    font-size: 17px;
+    align-self: flex-end;
+}
+
+input{
+    width: 100%;
+}
