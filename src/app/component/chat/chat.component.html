@@ -34,15 +34,28 @@
                 <div class="col-md-12 text-center text-white">
                   <h1>Chatea con otros¡</h1>
                   <p>Charla con quienes asistiran al evento.</p>
-                  <div class="chatContainer">
-                    <p [ngClass]="{'local': message.messageType === 1, 'remoto': message.messageType === 2}" *ngFor="let message of chats"> {{message.text}} </p>
-                </div>
+
+                  <div class="barra d-flex justify-content-between">
+                    <label style="align-self: center; padding-left: 20px;">Conectado {{cookie}}</label>
+                    <button type="button" class="btn btn-lg bi bi-clock-history" (click)="eliminarChats()"></button>
+                  </div>
+                  
+
+                  <div class="overflow-auto chatContainer">
+                    <p class="local">Bienvenido {{cookie}}</p>
+                      <div class="chat-bubble" [ngClass]="{'local': message.messageType === 1, 'remoto': message.messageType === 2}" *ngFor="let message of chats">
+                        <h2>{{message.usuario}}</h2>
+                        <br/>
+                        <p>{{message.text}} </p>
+                      </div>
+                  </div>
                 
-                <div class="inputContainer">
-                    <form (submit)="enviarMensaje()">
-                        <input class="form-control form-control-lg" type="text" placeholder="Escribe aquí." [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
-                    </form>
-                </div>
+                  <div class="inputContainer">
+                      <form (submit)="enviarMensaje()">
+                          <input class="form-control form-control-lg" type="text" placeholder="Ingrese su mensaje." [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+                      </form>
+                  </div>
+
                 </div>
               </div>
             </div>

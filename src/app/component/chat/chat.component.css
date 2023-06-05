@@ -16,11 +16,23 @@ p {
     font-weight: 300;
     font-size: 1.25rem;
 }
+
+.barra{
+    background-color: #d31b77;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #1b101a;
+    border-width: 5px;
+}
   
 .chatContainer{
+
+    background-image: url(https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/pattern-4.svg);
+    background-size: 300px;
+
     padding: 30px;
     width: 100%;
-    height: max-content;
+    height: 560px;
     min-width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,21 +41,21 @@ p {
 
 .local{
     padding: 20px;
-    border-radius: 20px;
-    background-color: darkcyan;
+    border-radius: 20px 20px 20px 0px;
+    background-color: #c9416a;
     max-width: 80%;
     color: white;
-    font-size: 17px;
+    font-size: 21px;
     align-self: flex-start;
 }
 
 .remoto{
     padding: 20px;
-    border-radius: 20px;
-    background-color: darkkhaki;
+    border-radius: 20px 20px 0px 20px;
+    background-color: #6db1c0;
     max-width: 80%;
     color: white;
-    font-size: 17px;
+    font-size: 21px;
     align-self: flex-end;
 }
 

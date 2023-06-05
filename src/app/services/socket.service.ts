@@ -7,20 +7,40 @@ import { io } from 'socket.io-client';
 })
 export class SocketService {
 
-  constructor() { }
-
   socket = io("http://localhost:3000/");
 
+  constructor() { 
+    this.socket.emit("verificar");
+    this.bienvenida();
+  }
+
+  bienvenida(){
+
+  }
+
   enviarMensaje(msg: any) {
-    console.log(msg)
-    this.socket.emit("message", msg);
+    this.socket.emit("response", msg);
+    
+  }
+
+  enviarArray(habil: any) {
+    this.socket.emit("reArray", habil);
     
   }
 
   recivirMensaje = (): Observable<any> => {
     return new Observable((observer) => {
-      this.socket.on("message", (message) => {
+      this.socket.on("response", (message) => {
+        message.messageType = 2;
         observer.next(message);
+      });
+    });
+  }
+
+  recivirArray = (): Observable<any> => {
+    return new Observable((observer) => {
+      this.socket.on("array", (resg) => {
+        observer.next(resg);
       });
     });
   }
